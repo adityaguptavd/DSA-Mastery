@@ -16,4 +16,4 @@ public:
         }
         return num_of_subarrays;
     }
-};g
+};
