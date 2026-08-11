@@ -7,7 +7,7 @@ public:
     vector<int> getModifiedArray(int length, vector<vector<int>>& updates) {
         vector<int> result(length, 0), diff(length + 1, 0);
         // build diff array
-        for(auto update: updates) {
+        for(const auto &update: updates) {
             int start_index = update[0];
             int end_index = update[1];
             int inc = update[2];
