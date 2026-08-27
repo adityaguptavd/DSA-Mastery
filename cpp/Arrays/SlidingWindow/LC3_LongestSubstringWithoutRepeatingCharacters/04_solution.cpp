@@ -1,22 +1,17 @@
-#include<string>
-#include<unordered_map>
-
-using namespace std;
-
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        size_t n = s.size();
+        int n = static_cast<int>(s.size());
         if(n == 0) return 0;
         // create hashmap and left pointer
-        unordered_map<char, size_t> seen;
-        size_t left = 0;
+        unordered_map<char, int> seen;
+        int left = 0;
         // initialize max
         int max_size = 0;
-        for(size_t right = 0; right < n; ++right) {
+        for(int right = 0; right < n; ++right) {
             // check for duplicate character in current window
-            auto entry = seen.find();
-            if(entry != end && entry->second >= left) {
+            auto entry = seen.find(s[right]);
+            if(entry != seen.end() && entry->second >= left) {
                 left = entry->second + 1;
             }
             // update seen value
